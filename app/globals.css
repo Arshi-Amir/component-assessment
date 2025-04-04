@@ -11,10 +11,6 @@
   --badge-inactive: #f8d7da;
   --button-primary: #0070f3;
   --button-danger: #dc3545;
-  
-  /* Font variables */
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /* Geist font integration */
@@ -25,21 +21,19 @@
 }
 
 :root {
-  --font-geist-sans: 'Geist Sans', var(--font-sans);
-  --font-geist-mono: var(--font-mono);
+  --font-geist-sans: 'Geist Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-geist-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --card-bg: #1a1a1a;
-    --card-border: #2d2d2d;
-    --badge-active: #2a5230;
-    --badge-inactive: #5a2329;
-    --button-primary: #0061d5;
-    --button-danger: #c82333;
-  }
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --card-bg: #1a1a1a;
+  --card-border: #2d2d2d;
+  --badge-active: #2a5230;
+  --badge-inactive: #5a2329;
+  --button-primary: #0061d5;
+  --button-danger: #c82333;
 }
 
 body {
@@ -57,4 +51,8 @@ body {
   transition: all 0.2s ease;
 }
 
-/* ... rest of your component styles ... */
+.user-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
