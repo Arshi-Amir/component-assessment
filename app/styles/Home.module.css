@@ -1,0 +1,330 @@
+.container {
+    min-height: 100vh;
+    padding: 0 2rem;
+  }
+  
+  .main {
+    padding: 2rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Dark mode styles */
+  .dark {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .dark .userCard,
+  .dark .userForm,
+  .dark .userProfile,
+  .dark .searchInput,
+  .dark .filterSelect {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border-color: #444;
+  }
+  
+  .dark .button,
+  .dark .addButton,
+  .dark .submitButton,
+  .dark .editButton {
+    background-color: #4a4a4a;
+    color: #ffffff;
+  }
+  
+  .dark .button:hover,
+  .dark .addButton:hover,
+  .dark .submitButton:hover,
+  .dark .editButton:hover {
+    background-color: #5a5a5a;
+  }
+  
+  /* User Management */
+  .userManagement {
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* User List */
+  .userList {
+    width: 100%;
+  }
+  
+  .filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .searchInput {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .filterSelect {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  
+  .noResults {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+  }
+  
+  /* User Card */
+  .userCard {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    align-self: center;
+  }
+  
+  .userInfo {
+    margin: 0.5rem 0;
+  }
+  
+  .badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .active {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .inactive {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .dark .active {
+    background-color: #2a5230;
+    color: #d4edda;
+  }
+  
+  .dark .inactive {
+    background-color: #5a2329;
+    color: #f8d7da;
+  }
+  
+  .button {
+    padding: 0.5rem 1rem;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+  }
+  
+  .button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .addButton {
+    padding: 0.5rem 1rem;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .addButton:hover {
+    background-color: #0061d5;
+  }
+  
+  /* User Form */
+  .userForm {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .formGroup {
+    margin-bottom: 1rem;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+  }
+  
+  .formGroup input,
+  .formGroup select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .errorInput {
+    border-color: #dc3545 !important;
+  }
+  
+  .error {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+  }
+  
+  .formButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .submitButton {
+    padding: 0.5rem 1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: #218838;
+  }
+  
+  .cancelButton {
+    padding: 0.5rem 1rem;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .cancelButton:hover {
+    background-color: #5a6268;
+  }
+  
+  .deleteButton {
+    padding: 0.5rem 1rem;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .deleteButton:hover {
+    background-color: #c82333;
+  }
+  
+  /* User Profile */
+  .userProfile {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .backButton {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .backButton:hover {
+    background-color: #5a6268;
+  }
+  
+  .profileHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .profileAvatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .profileDetails {
+    margin: 1.5rem 0;
+  }
+  
+  .detailRow {
+    display: flex;
+    margin-bottom: 0.75rem;
+  }
+  
+  .detailLabel {
+    font-weight: bold;
+    min-width: 120px;
+  }
+  
+  .editButton {
+    padding: 0.5rem 1rem;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .editButton:hover {
+    background-color: #0061d5;
+  }
+  
+  /* Theme Toggle */
+  .themeToggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  .dark .themeToggle {
+    background-color: #4a4a4a;
+    color: #ffffff;
+  }

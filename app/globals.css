@@ -1,26 +1,60 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --badge-active: #d4edda;
+  --badge-inactive: #f8d7da;
+  --button-primary: #0070f3;
+  --button-danger: #dc3545;
+  
+  /* Font variables */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Geist font integration */
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('/fonts/Geist/GeistVariableVF.woff2') format('woff2');
+  font-display: swap;
+}
+
+:root {
+  --font-geist-sans: 'Geist Sans', var(--font-sans);
+  --font-geist-mono: var(--font-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --card-bg: #1a1a1a;
+    --card-border: #2d2d2d;
+    --badge-active: #2a5230;
+    --badge-inactive: #5a2329;
+    --button-primary: #0061d5;
+    --button-danger: #c82333;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans);
 }
+
+/* Component Styles */
+.user-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+/* ... rest of your component styles ... */
