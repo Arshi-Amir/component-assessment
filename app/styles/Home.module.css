@@ -4,6 +4,144 @@
 /* styles/home.module.css */
 
 /* Add this if you want to style the Todo page container */
+/* app/styles/home.module.css */
+
+/* Container Styles */
+.todoPageContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.todoContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: var(--bg-primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.todoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Form Styles */
+.todoForm {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todoInput {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--border-primary);
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Button Styles */
+.toggleButton {
+  padding: 8px 16px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addButton {
+  padding: 10px 20px;
+  background-color: var(--success);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.deleteButton {
+  padding: 5px 10px;
+  background-color: var(--danger);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* List Styles */
+.todoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+.todoCheckbox {
+  margin-right: 10px;
+}
+
+.todoText {
+  flex: 1;
+  color: var(--text-primary);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+}
+
+/* Message Styles */
+.emptyMessage {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 20px 0;
+}
+
+.authMessage {
+  padding: 15px;
+  background-color: #fef3c7;
+  color: #92400e;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Dark Mode Overrides */
+.dark .todoContainer {
+  background-color: var(--bg-solid-dark);
+}
+
+.dark .todoInput {
+  background-color: var(--bg-solid-dark);
+  border-color: var(--border-primary);
+  color: var(--text-light);
+}
+
+.dark .todoItem {
+  background-color: #4a5568;
+}
+
+.dark .authMessage {
+  background-color: #7c2d12;
+  color: #fef3c7;
+}
 .todoPageContainer {
   max-width: 800px;
   margin: 0 auto;
@@ -146,29 +284,7 @@
   background-color: #7c2d12;
   color: #fef3c7;
 }
-:root {
-  --bg-solid-light: #ffffff;
-  --bg-solid-dark: #1f2937;
-  --text-dark: #1f2937;
-  --text-light: #f9fafb;
-  --primary: #3b82f6;
-  --primary-hover: #2563eb;
-  --danger: #ef4444;
-  --danger-hover: #dc2626;
-  --success: #10b981;
-  --border: #e5e7eb;
-}
 
-/* Theme Definitions */
-:root, .light {
-  --bg-color: var(--bg-solid-light);
-  --text-color: var(--text-dark);
-  --auth-bg: #f3f4f6;
-  --auth-box-bg: #ffffff;
-  --app-bg: #ffffff;
-  --border-color: #d1d5db;
-  --input-bg: #ffffff;
-}
 
 .dark {
   --bg-color: var(--bg-solid-dark);

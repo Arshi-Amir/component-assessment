@@ -1,4 +1,35 @@
 /* Add these variables at the top of your :root declarations */
+/* app/globals.css */
+:root {
+  /* Color Variables */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --border-primary: #e5e7eb;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --success: #10b981;
+  
+  /* Theme Variables */
+  --bg-solid-light: #ffffff;
+  --bg-solid-dark: #1f2937;
+  --text-dark: #1f2937;
+  --text-light: #f9fafb;
+  --navbar-height: 4rem;
+}
+
+.dark {
+  --bg-primary: #1f2937;
+  --bg-secondary: #111827;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --border-primary: #4b5563;
+}
+
+/* Rest of your existing global styles... */
 :root {
   --bg-primary: #ffffff;
   --bg-secondary: #f3f4f6;
