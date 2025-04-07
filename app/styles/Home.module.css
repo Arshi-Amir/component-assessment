@@ -1,330 +1,541 @@
-.container {
-    min-height: 100vh;
-    padding: 0 2rem;
-  }
-  
-  .main {
-    padding: 2rem 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* Dark mode styles */
-  .dark {
-    background-color: #1a1a1a;
-    color: #ffffff;
-  }
-  
-  .dark .userCard,
-  .dark .userForm,
-  .dark .userProfile,
-  .dark .searchInput,
-  .dark .filterSelect {
-    background-color: #2d2d2d;
-    color: #ffffff;
-    border-color: #444;
-  }
-  
-  .dark .button,
-  .dark .addButton,
-  .dark .submitButton,
-  .dark .editButton {
-    background-color: #4a4a4a;
-    color: #ffffff;
-  }
-  
-  .dark .button:hover,
-  .dark .addButton:hover,
-  .dark .submitButton:hover,
-  .dark .editButton:hover {
-    background-color: #5a5a5a;
-  }
-  
-  /* User Management */
-  .userManagement {
-    width: 100%;
-    max-width: 1200px;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-  
-  /* User List */
-  .userList {
-    width: 100%;
-  }
-  
-  .filters {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .searchInput {
-    flex: 1;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .filterSelect {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .cardsContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
-  }
-  
-  .noResults {
-    text-align: center;
-    padding: 2rem;
-    color: #666;
-  }
-  
-  /* User Card */
-  .userCard {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    align-self: center;
-  }
-  
-  .userInfo {
-    margin: 0.5rem 0;
-  }
-  
-  .badge {
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: bold;
-  }
-  
-  .active {
-    background-color: #d4edda;
-    color: #155724;
-  }
-  
-  .inactive {
-    background-color: #f8d7da;
-    color: #721c24;
-  }
-  
-  .dark .active {
-    background-color: #2a5230;
-    color: #d4edda;
-  }
-  
-  .dark .inactive {
-    background-color: #5a2329;
-    color: #f8d7da;
-  }
-  
-  .button {
-    padding: 0.5rem 1rem;
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    align-self: flex-start;
-  }
-  
-  .button:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .addButton {
-    padding: 0.5rem 1rem;
-    background-color: #0070f3;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .addButton:hover {
-    background-color: #0061d5;
-  }
-  
-  /* User Form */
-  .userForm {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .formGroup {
-    margin-bottom: 1rem;
-  }
-  
-  .formGroup label {
+/* Base Styles */
+
+/* styles/home.module.css */
+/* styles/home.module.css */
+
+/* Add this if you want to style the Todo page container */
+.todoPageContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.todoContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todoContainer.dark {
+  background-color: #2d3748;
+  color: #ffffff;
+}
+
+.todoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.toggleButton {
+  padding: 8px 16px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.toggleButton:hover {
+  background-color: #4338ca;
+}
+
+.toggleButton.active {
+  background-color: #dc2626;
+}
+
+.todoForm {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todoInput {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.dark .todoInput {
+  background-color: #4a5568;
+  color: white;
+  border-color: #4a5568;
+}
+
+.addButton {
+  padding: 10px 20px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addButton:hover {
+  background-color: #059669;
+}
+
+.todoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: #f3f4f6;
+  border-radius: 4px;
+}
+
+.dark .todoItem {
+  background-color: #4a5568;
+}
+
+.todoCheckbox {
+  margin-right: 10px;
+}
+
+.todoText {
+  flex: 1;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.deleteButton {
+  padding: 5px 10px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.deleteButton:hover {
+  background-color: #dc2626;
+}
+
+.emptyMessage {
+  text-align: center;
+  color: #6b7280;
+  padding: 20px 0;
+}
+
+.authMessage {
+  padding: 15px;
+  background-color: #fef3c7;
+  color: #92400e;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.dark .authMessage {
+  background-color: #7c2d12;
+  color: #fef3c7;
+}
+:root {
+  --bg-solid-light: #ffffff;
+  --bg-solid-dark: #1f2937;
+  --text-dark: #1f2937;
+  --text-light: #f9fafb;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --success: #10b981;
+  --border: #e5e7eb;
+}
+
+/* Theme Definitions */
+:root, .light {
+  --bg-color: var(--bg-solid-light);
+  --text-color: var(--text-dark);
+  --auth-bg: #f3f4f6;
+  --auth-box-bg: #ffffff;
+  --app-bg: #ffffff;
+  --border-color: #d1d5db;
+  --input-bg: #ffffff;
+}
+
+.dark {
+  --bg-color: var(--bg-solid-dark);
+  --text-color: var(--text-light);
+  --auth-bg: #111827;
+  --auth-box-bg: #1f2937;
+  --app-bg: #1f2937;
+  --border-color: #4b5563;
+  --input-bg: #374151;
+}
+
+/* Table Styles */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.user-table th {
+  background-color: var(--auth-bg);
+  font-weight: 600;
+}
+
+.user-table tr:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.dark .user-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-active {
+  background-color: #ecfdf5;
+  color: #065f46;
+}
+
+.status-inactive {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.dark .status-active {
+  background-color: #064e3b;
+  color: #a7f3d0;
+}
+
+.dark .status-inactive {
+  background-color: #7f1d1d;
+  color: #fecaca;
+}
+
+/* Action Buttons */
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin: 0 4px;
+  font-size: 0.875rem;
+}
+
+.view-btn {
+  color: var(--primary);
+}
+
+.edit-btn {
+  color: var(--success);
+}
+
+.delete-btn {
+  color: var(--danger);
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .user-table {
     display: block;
-    margin-bottom: 0.25rem;
-    font-weight: bold;
+    overflow-x: auto;
   }
-  
-  .formGroup input,
-  .formGroup select {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .errorInput {
-    border-color: #dc3545 !important;
-  }
-  
-  .error {
-    color: #dc3545;
-    font-size: 0.8rem;
-    margin-top: 0.25rem;
-  }
-  
-  .formButtons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
-  
-  .submitButton {
-    padding: 0.5rem 1rem;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .submitButton:hover {
-    background-color: #218838;
-  }
-  
-  .cancelButton {
-    padding: 0.5rem 1rem;
-    background-color: #6c757d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .cancelButton:hover {
-    background-color: #5a6268;
-  }
-  
-  .deleteButton {
-    padding: 0.5rem 1rem;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
-  
-  .deleteButton:hover {
-    background-color: #c82333;
-  }
-  
-  /* User Profile */
-  .userProfile {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .backButton {
-    margin-bottom: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #6c757d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .backButton:hover {
-    background-color: #5a6268;
-  }
-  
-  .profileHeader {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .profileAvatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .profileDetails {
-    margin: 1.5rem 0;
-  }
-  
-  .detailRow {
-    display: flex;
-    margin-bottom: 0.75rem;
-  }
-  
-  .detailLabel {
-    font-weight: bold;
-    min-width: 120px;
-  }
-  
-  .editButton {
-    padding: 0.5rem 1rem;
-    background-color: #0070f3;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .editButton:hover {
-    background-color: #0061d5;
-  }
-  
-  /* Theme Toggle */
-  .themeToggle {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    z-index: 100;
-  }
-  
-  .dark .themeToggle {
-    background-color: #4a4a4a;
-    color: #ffffff;
-  }
+}
+
+/* UserProfile Styles */
+.profileCard {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--app-bg);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+}
+
+.backButton {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.2s;
+}
+
+.backButton:hover {
+  background-color: var(--primary-hover);
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.profileAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary);
+}
+
+.userName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badge.active {
+  background-color: #ecfdf5;
+  color: #065f46;
+}
+
+.badge.inactive {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.detailRow {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.detailLabel {
+  font-weight: 600;
+  width: 120px;
+  color: var(--text-color);
+}
+
+.detailValue {
+  flex: 1;
+  color: var(--text-color);
+}
+
+.profileActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.editButton {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.editButton:hover {
+  background-color: var(--primary-hover);
+}
+
+.deleteButton {
+  background-color: var(--danger);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.deleteButton:hover {
+  background-color: var(--danger-hover);
+}
+
+/* Edit User Form Styles */
+.userFormContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--app-bg);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+}
+
+.userFormHeader {
+  margin-bottom: 2rem;
+}
+
+.userFormTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
+.userFormSubtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formLabel {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.formLabelRequired::after {
+  content: ' *';
+  color: var(--danger);
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.formSelect {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  font-size: 0.95rem;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.formSelect:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.cancelButton {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancelButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.submitButton {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Dark mode styles */
+.dark {
+  --text-secondary: #9ca3af;
+  --input-bg-dark: #374151;
+  --border-color-dark: #4b5563;
+}
+
+.dark .badge.active {
+  background-color: #064e3b;
+  color: #a7f3d0;
+}
+
+.dark .badge.inactive {
+  background-color: #7f1d1d;
+  color: #fecaca;
+}
+
+.dark .cancelButton:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark .formInput,
+.dark .formSelect {
+  background-color: var(--input-bg-dark);
+  border-color: var(--border-color-dark);
+}

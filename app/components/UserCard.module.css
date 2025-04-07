@@ -1,0 +1,174 @@
+.card {
+    background: var(--card-bg, #ffffff);
+    border-radius: 12px;
+    border: 1px solid var(--card-border, #e5e7eb);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--card-hover-border, #d1d5db);
+  }
+  
+  .header {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+  
+  .avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--avatar-border, #e5e7eb);
+    flex-shrink: 0;
+  }
+  
+  .info {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary, #111827);
+    margin: 0 0 0.25rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .email {
+    color: var(--text-secondary, #6b7280);
+    font-size: 0.875rem;
+    margin: 0 0 0.5rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .active {
+    background-color: var(--badge-active-bg, #ecfdf5);
+    color: var(--badge-active-text, #065f46);
+    border: 1px solid var(--badge-active-border, #a7f3d0);
+  }
+  
+  .inactive {
+    background-color: var(--badge-inactive-bg, #fee2e2);
+    color: var(--badge-inactive-text, #991b1b);
+    border: 1px solid var(--badge-inactive-border, #fecaca);
+  }
+  
+  .role {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: var(--role-bg, #e0e7ff);
+    color: var(--role-text, #3730a3);
+    border: 1px solid var(--role-border, #c7d2fe);
+  }
+  
+  .actions {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem 1.25rem;
+    border-top: 1px solid var(--actions-border, #e5e7eb);
+  }
+  
+  .viewBtn,
+  .editBtn,
+  .deleteBtn {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .viewBtn {
+    background-color: var(--view-btn-bg, #f3f4f6);
+    color: var(--view-btn-text, #111827);
+    border: 1px solid var(--view-btn-border, #e5e7eb);
+  }
+  
+  .viewBtn:hover {
+    background-color: var(--view-btn-hover, #e5e7eb);
+  }
+  
+  .editBtn {
+    background-color: var(--edit-btn-bg, #2563eb);
+    color: var(--edit-btn-text, #ffffff);
+    border: none;
+  }
+  
+  .editBtn:hover {
+    background-color: var(--edit-btn-hover, #1d4ed8);
+  }
+  
+  .deleteBtn {
+    background-color: var(--delete-btn-bg, #ffffff);
+    color: var(--delete-btn-text, #dc2626);
+    border: 1px solid var(--delete-btn-border, #fecaca);
+  }
+  
+  .deleteBtn:hover {
+    background-color: var(--delete-btn-hover, #fef2f2);
+    border-color: var(--delete-btn-hover-border, #fca5a5);
+  }
+  
+  /* Dark mode support */
+  .dark .card {
+    --card-bg: #1f2937;
+    --card-border: #374151;
+    --card-hover-border: #4b5563;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --avatar-border: #4b5563;
+    --actions-border: #374151;
+    --view-btn-bg: #374151;
+    --view-btn-text: #f9fafb;
+    --view-btn-border: #4b5563;
+    --view-btn-hover: #4b5563;
+    --edit-btn-bg: #3b82f6;
+    --edit-btn-hover: #2563eb;
+    --delete-btn-bg: #1f2937;
+    --delete-btn-text: #f87171;
+    --delete-btn-border: #7f1d1d;
+    --delete-btn-hover: #7f1d1d;
+    --delete-btn-hover-border: #991b1b;
+    --badge-active-bg: #064e3b;
+    --badge-active-text: #a7f3d0;
+    --badge-active-border: #059669;
+    --badge-inactive-bg: #7f1d1d;
+    --badge-inactive-text: #fecaca;
+    --badge-inactive-border: #b91c1c;
+    --role-bg: #1e1b4b;
+    --role-text: #c7d2fe;
+    --role-border: #4338ca;
+  }

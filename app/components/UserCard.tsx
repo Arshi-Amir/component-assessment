@@ -1,28 +1,60 @@
 'use client';
-
 import { User } from '../../types';
-import styles from '../styles/Home.module.css';
+import styles from './UserCard.module.css';
 
 interface UserCardProps {
   user: User;
-  onViewProfile: (user: User) => void;
+  onView: (user: User) => void;
+  onEdit: (user: User) => void;
+  onDelete: (user: User) => void;
 }
 
-export default function UserCard({ user, onViewProfile }: UserCardProps) {
+export default function UserCard({ user, onView, onEdit, onDelete }: UserCardProps) {
   return (
-    <div className={styles.userCard}>
-      <img src={user.avatar} alt={user.name} className={styles.avatar} />
-      <div className={styles.userInfo}>
-        <h3>{user.name}</h3>
-        <p>{user.email}</p>
-        <p>Role: {user.role}</p>
-        <span className={`${styles.badge} ${user.isActive ? styles.active : styles.inactive}`}>
-          {user.isActive ? 'Active' : 'Inactive'}
-        </span>
+    <div className={styles.card}>
+      <div className={styles.header}>
+        <img 
+          src={user.avatar} 
+          alt={user.name} 
+          className={styles.avatar}
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${user.name.replace(' ', '+')}&background=random`;
+          }}
+        />
+        <div className={styles.info}>
+          <h3 className={styles.name}>{user.name}</h3>
+          <p className={styles.email}>{user.email}</p>
+          <div className={styles.meta}>
+            <span className={`${styles.badge} ${user.isActive ? styles.active : styles.inactive}`}>
+              {user.isActive ? 'Active' : 'Inactive'}
+            </span>
+            <span className={styles.role}>{user.role}</span>
+          </div>
+        </div>
       </div>
-      <button onClick={() => onViewProfile(user)} className={styles.button}>
-        View Profile
-      </button>
+      <div className={styles.actions}>
+        <button 
+          onClick={() => onView(user)} 
+          className={styles.viewBtn}
+          aria-label={`View ${user.name}`}
+        >
+          View
+        </button>
+        <button 
+          onClick={() => onEdit(user)} 
+          className={styles.editBtn}
+          aria-label={`Edit ${user.name}`}
+        >
+          Edit
+        </button>
+        <button 
+          onClick={() => onDelete(user)} 
+          className={styles.deleteBtn}
+          aria-label={`Delete ${user.name}`}
+        >
+          Delete
+        </button>
+      </div>
     </div>
   );
 }

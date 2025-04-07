@@ -1,25 +1,32 @@
 'use client';
-
 import { User } from '../../types';
-import styles from '../styles/Home.module.css';
+import styles from '@/app/styles/Home.module.css';
 
 interface UserProfileProps {
   user: User;
-  onEdit: (user: User) => void;
+  onEdit: () => void;
   onBack: () => void;
+  onDelete: () => void;
 }
 
-export default function UserProfile({ user, onEdit, onBack }: UserProfileProps) {
+export default function UserProfile({ user, onEdit, onBack, onDelete }: UserProfileProps) {
   return (
-    <div className={styles.userProfile}>
+    <div className={styles.profileCard}>
       <button onClick={onBack} className={styles.backButton}>
         Back to List
       </button>
       
       <div className={styles.profileHeader}>
-        <img src={user.avatar} alt={user.name} className={styles.profileAvatar} />
+        <img 
+          src={user.avatar} 
+          alt={user.name} 
+          className={styles.profileAvatar}
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${user.name.replace(' ', '+')}&background=random`;
+          }}
+        />
         <div>
-          <h2>{user.name}</h2>
+          <h2 className={styles.userName}>{user.name}</h2>
           <span className={`${styles.badge} ${user.isActive ? styles.active : styles.inactive}`}>
             {user.isActive ? 'Active' : 'Inactive'}
           </span>
@@ -29,29 +36,34 @@ export default function UserProfile({ user, onEdit, onBack }: UserProfileProps) 
       <div className={styles.profileDetails}>
         <div className={styles.detailRow}>
           <span className={styles.detailLabel}>Email:</span>
-          <span>{user.email}</span>
+          <span className={styles.detailValue}>{user.email}</span>
         </div>
         <div className={styles.detailRow}>
           <span className={styles.detailLabel}>Role:</span>
-          <span>{user.role}</span>
+          <span className={styles.detailValue}>{user.role}</span>
         </div>
         <div className={styles.detailRow}>
           <span className={styles.detailLabel}>Department:</span>
-          <span>{user.department}</span>
+          <span className={styles.detailValue}>{user.department}</span>
         </div>
         <div className={styles.detailRow}>
           <span className={styles.detailLabel}>Location:</span>
-          <span>{user.location}</span>
+          <span className={styles.detailValue}>{user.location}</span>
         </div>
         <div className={styles.detailRow}>
           <span className={styles.detailLabel}>Join Date:</span>
-          <span>{user.joinDate}</span>
+          <span className={styles.detailValue}>{user.joinDate}</span>
         </div>
       </div>
       
-      <button onClick={() => onEdit(user)} className={styles.editButton}>
-        Edit Profile
-      </button>
+      <div className={styles.profileActions}>
+        <button onClick={onEdit} className={styles.editButton}>
+          Edit Profile
+        </button>
+        <button onClick={onDelete} className={styles.deleteButton}>
+          Delete Profile
+        </button>
+      </div>
     </div>
   );
 }
